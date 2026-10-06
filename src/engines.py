@@ -191,7 +191,11 @@ class AIEngineClient:
 
                 tree = LexborHTMLParser(res.text)
                 results = tree.css(".result")
-                for r in results[:10]:
+                for r in results:
+                    class_str = r.attributes.get("class", "")
+                    if "result--ad" in class_str or "badge--ad" in class_str:
+                        continue
+
                     title_elem = r.css_first(".result__title")
                     snippet_elem = r.css_first(".result__snippet")
                     url_elem = r.css_first(".result__url")
@@ -199,6 +203,9 @@ class AIEngineClient:
                     title = title_elem.text().strip() if title_elem else ""
                     snip = snippet_elem.text().strip() if snippet_elem else ""
                     raw_url = url_elem.text().strip() if url_elem else ""
+
+                    if "Viewing ads is privacy protected" in snip or "Ad clicks are managed" in snip:
+                        continue
 
                     if raw_url:
                         clean_url = f"https://{raw_url}" if not raw_url.startswith("http") else raw_url
