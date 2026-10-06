@@ -36,14 +36,21 @@ async def main() -> None:
 
         # Build list of queries
         queries: list[str] = []
-        raw_custom = inp.get("customQueries") or []
+        raw_custom = inp.get("customQueries") or inp.get("queries") or []
         for q in raw_custom:
             clean_q = str(q).strip()
             if clean_q and clean_q not in queries:
                 queries.append(clean_q)
 
-        # Generate template queries if requested or if custom list is short
-        templates = inp.get("queryTemplates") or ["best_tools", "alternatives", "recommendations"]
+        # Generate template queries if explicitly requested or if no custom queries were provided
+        user_specified_templates = inp.get("queryTemplates")
+        if user_specified_templates is not None:
+            templates = user_specified_templates
+        elif not queries:
+            templates = ["best_tools", "alternatives", "recommendations"]
+        else:
+            templates = []
+
         ind_label = industry or "software"
         if "best_tools" in templates:
             q_best = f"What are the best {ind_label} tools in 2026?"
