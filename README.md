@@ -189,3 +189,21 @@ This Actor operates under **Pay-Per-Event (PPE)**:
 - **Per Brand Query Checked ($0.04):** Charged per individual brand × query × platform check.
 - 50% cheaper than legacy AI brand monitoring scrapers ($0.08 / check).
 - Compute usage is fully included in the event fee. Set spending limits in your Apify Console to keep your runs within budget.
+
+---
+
+## Automated Scheduling & Webhooks
+
+You can automate regular GEO rank tracking using Apify Schedules:
+- **Weekly Executive Report:** Set a cron schedule (e.g. `0 9 * * 1`) to run every Monday morning.
+- **Slack / Webhook Alerts:** Configure Apify Webhooks to notify your Slack or Discord channel when your brand falls below rank #3 or when a competitor's Share of Voice spikes.
+
+---
+
+## Related Apify Scraping & Intelligence Tools
+
+Explore the other high-performance, cost-effective scrapers in this suite:
+
+- [Google Hotels Prices & OTA Rate Tracker API](https://apify.com/kamerozkan/google-hotels-prices) - Real-time hotel rates, room types, and OTA rate disparity scraper.
+- [Google Ads Transparency Center Scraper & Spy API](https://apify.com/kamerozkan/google-ads-transparency-scraper) - Monitor competitor ad creatives, variations, formats, and target regions.
+- [Google Flights Prices & Fare Tracker API](https://apify.com/kamerozkan/google-flights-prices) - Extract live airline ticket fares, non-stop flight schedules, and price histories.

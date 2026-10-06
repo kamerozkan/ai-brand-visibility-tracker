@@ -79,7 +79,7 @@ class VisibilityAnalyzer:
         # 3. Detect Ordered List Ranking (1. Brand, 2. Brand...)
         # Match lines like: "1. **Brand**", "1. Brand:", "#1 Brand", "* **Brand**"
         list_items = re.findall(
-            r"(?:^|\n)\s*(?:(?:\d+\.|\*|-|#\d+)\s+)?(?:\*\*)?([A-Za-z0-9\.\s\-_/]+?)(?:\*\*)?(?:\s*[-:—]|\s+\()",
+            r"(?:^|\n)\s*(?:(?:\d+\.|\*|-|#\d+)\s+)?(?:\*\*)?([A-Za-z0-9\.\s\-_/]+?)(?:\*\*)?(?:\s*[-:\u2014]|\s+\()",
             text,
             flags=re.MULTILINE,
         )
