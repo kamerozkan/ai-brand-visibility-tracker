@@ -1,7 +1,7 @@
 {
     "actorSpecification": 1,
     "name": "ai-brand-visibility-tracker",
-    "title": "AI Brand Visibility & GEO Rank Tracker (ChatGPT, Perplexity & Claude)",
+    "title": "AI Brand Visibility & GEO Rank Tracker",
     "description": "Monitor brand mentions, Share of Voice (SOV), competitor recommendations, sentiment, and citation sources across AI search engines (Perplexity, ChatGPT, Gemini, Claude). Essential for Generative Engine Optimization (GEO).",
     "version": "1.0",
     "buildTag": "latest",

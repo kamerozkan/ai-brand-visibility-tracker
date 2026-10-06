@@ -166,8 +166,16 @@ class AIEngineClient:
         """Synthesize realistic AI search answer using live web search SERP grounding."""
         loop = asyncio.get_running_loop()
 
+        def _create_client(proxy_url: str | None = None) -> Client:
+            for imp in ["chrome_146", "chrome_145", "chrome_131", "chrome_126", "chrome"]:
+                try:
+                    return Client(impersonate=imp, verify=False, proxy=proxy_url, cookie_store=True)
+                except Exception:
+                    continue
+            return Client(verify=False, proxy=proxy_url, cookie_store=True)
+
         def _fetch_serp() -> tuple[str, list[str]]:
-            client = Client(verify=False, impersonate="chrome_131")
+            client = _create_client()
             # Fetch search results from DuckDuckGo HTML
             res = client.get(
                 "https://html.duckduckgo.com/html/",
