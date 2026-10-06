@@ -1,0 +1,72 @@
+{
+    "actorSpecification": 1,
+    "views": {
+        "overview": {
+            "title": "GEO Brand Visibility Overview",
+            "transformation": {
+                "fields": [
+                    "platform",
+                    "query",
+                    "isMentioned",
+                    "rank",
+                    "prominenceScore",
+                    "shareOfVoicePercentage",
+                    "sentiment",
+                    "isBrandCited",
+                    "competitorsMentioned",
+                    "citedDomains",
+                    "recommendationSnippet"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "platform": {
+                        "label": "AI Engine",
+                        "format": "text"
+                    },
+                    "query": {
+                        "label": "Search Query / Prompt",
+                        "format": "text"
+                    },
+                    "isMentioned": {
+                        "label": "Mentioned?",
+                        "format": "boolean"
+                    },
+                    "rank": {
+                        "label": "Rank #",
+                        "format": "number"
+                    },
+                    "prominenceScore": {
+                        "label": "Prominence (0-100)",
+                        "format": "number"
+                    },
+                    "shareOfVoicePercentage": {
+                        "label": "SOV %",
+                        "format": "number"
+                    },
+                    "sentiment": {
+                        "label": "Sentiment",
+                        "format": "text"
+                    },
+                    "isBrandCited": {
+                        "label": "Domain Cited?",
+                        "format": "boolean"
+                    },
+                    "competitorsMentioned": {
+                        "label": "Competitors Co-Mentioned",
+                        "format": "text"
+                    },
+                    "citedDomains": {
+                        "label": "Top Cited Sources",
+                        "format": "text"
+                    },
+                    "recommendationSnippet": {
+                        "label": "AI Recommendation Excerpt",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}

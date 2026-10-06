@@ -1,0 +1,112 @@
+{
+    "title": "AI Brand Visibility & GEO Rank Tracker Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "brandName": {
+            "title": "Target Brand Name",
+            "type": "string",
+            "description": "The exact brand, company, or product name you want to monitor (e.g. 'Linear', 'Shopify', 'Stripe').",
+            "editor": "textfield",
+            "prefill": "Linear"
+        },
+        "brandDomain": {
+            "title": "Target Brand Domain",
+            "type": "string",
+            "description": "Your brand's primary website domain to track direct citation links (e.g. 'linear.app', 'shopify.com').",
+            "editor": "textfield",
+            "prefill": "linear.app"
+        },
+        "brandAliases": {
+            "title": "Brand Aliases / Alternative Names",
+            "type": "array",
+            "description": "Other common names or variations used for your brand.",
+            "editor": "stringList",
+            "prefill": ["Linear App", "Linear.app"]
+        },
+        "competitors": {
+            "title": "Competitor Brands to Benchmark",
+            "type": "array",
+            "description": "List of competitors to monitor for co-mentions and calculate relative Share of Voice (SOV).",
+            "editor": "stringList",
+            "prefill": ["Jira", "Asana", "Monday.com", "ClickUp"]
+        },
+        "industry": {
+            "title": "Industry / Product Category",
+            "type": "string",
+            "description": "Industry or software category used to generate automated recommendation prompts (e.g. 'project management', 'CRM', 'accounting').",
+            "editor": "textfield",
+            "prefill": "project management software"
+        },
+        "platforms": {
+            "title": "AI Platforms to Audit",
+            "type": "array",
+            "description": "Select which AI search engines to query.",
+            "editor": "select",
+            "default": ["perplexity", "chatgpt", "gemini"],
+            "items": {
+                "type": "string",
+                "enum": ["perplexity", "chatgpt", "gemini", "claude"],
+                "enumTitles": ["Perplexity AI", "ChatGPT (OpenAI)", "Google Gemini", "Claude (Anthropic)"]
+            }
+        },
+        "customQueries": {
+            "title": "Custom Search Queries (Prompts)",
+            "type": "array",
+            "description": "Specific search queries or buyer prompts to submit to each AI engine.",
+            "editor": "stringList",
+            "prefill": [
+                "What are the best project management software for engineering startups in 2026?",
+                "Top alternatives to Jira for fast agile development"
+            ]
+        },
+        "queryTemplates": {
+            "title": "Automated Query Categories",
+            "type": "array",
+            "description": "Automatically generates category-specific prompts if custom queries are not provided.",
+            "editor": "select",
+            "default": ["best_tools", "alternatives", "recommendations"],
+            "items": {
+                "type": "string",
+                "enum": ["best_tools", "alternatives", "recommendations"],
+                "enumTitles": ["Best Tools in Category", "Competitor Alternatives", "Software Recommendations"]
+            }
+        },
+        "maxQueriesPerPlatform": {
+            "title": "Max Queries per Platform",
+            "type": "integer",
+            "description": "Maximum number of queries to execute per selected AI platform.",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 20
+        },
+        "openaiApiKey": {
+            "title": "OpenAI API Key (Optional BYOK)",
+            "type": "string",
+            "description": "Provide your own OpenAI API key to execute queries directly with your account models.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "perplexityApiKey": {
+            "title": "Perplexity API Key (Optional BYOK)",
+            "type": "string",
+            "description": "Provide your own Perplexity API key to query Sonar models with real-time web citations.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "geminiApiKey": {
+            "title": "Google Gemini API Key (Optional BYOK)",
+            "type": "string",
+            "description": "Provide your own Google Gemini API key to query Gemini 1.5 with Google Search grounding.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "anthropicApiKey": {
+            "title": "Anthropic Claude API Key (Optional BYOK)",
+            "type": "string",
+            "description": "Provide your own Anthropic API key to query Claude 3.5 models.",
+            "editor": "textfield",
+            "isSecret": true
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "AI Brand Visibility Output",
+    "description": "Dataset containing AI brand mentions, GEO ranking, Share of Voice (SOV), competitor comparisons, sentiment, and cited domains.",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Brand Visibility Dataset",
+            "description": "Default dataset containing audit checks across all configured AI search engines.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}
